@@ -21,13 +21,13 @@ ARCH ?= arm
 ```
 2.3 选择相关配置
 输入make menuconfig进入，配置选项。
- 由于要支持执行文件的运行，因此需要配置成动态链接的形式。否则在执行程序的时候，会提示“/bin/sh:cmd not found”
-在”Busybox Settings ---> Build Options --->“ 关闭“Build BusyBox as a static binary。
-打开”Build shared libbusybox“。
- 关闭”Produce a binary for each applet“与”Produce additional busybox binary“。
- ![busybox动态链接](https://img2018.cnblogs.com/blog/508457/201911/508457-20191123163152955-1108114692.png)
+ 由于要支持执行文件的运行，因此需要配置成动态链接的形式。否则在执行程序的时候，会提示“/bin/sh:cmd not found”  
+在”Busybox Settings ---> Build Options --->“ 关闭“Build BusyBox as a static binary。  
+打开”Build shared libbusybox“。  
+ 关闭”Produce a binary for each applet“与”Produce additional busybox binary“。   
+ ![busybox动态链接](./pic/no_shared.png)
 关闭cosole cotrol：
-![](https://img2018.cnblogs.com/blog/508457/201911/508457-20191123163252266-1605043279.png)
+![关闭cosole](./pic/job_control.png)
 保存并退出
 
 2.4 编译生成文件系统
@@ -36,7 +36,7 @@ ARCH ?= arm
 2.5 准备设备文件和启动脚本
 1. 链接库文件
 查看busybox依赖的链接库
-![](https://img2018.cnblogs.com/blog/508457/201911/508457-20191123164427770-1811070985.png)
+![查看链接库文件](./pic/library.png)
  locate libc.so.6查看文件的位置，拷贝相关文件到lib目录下。
 
 2. etc文件
