@@ -8,7 +8,7 @@
 #!/bin/sh
 if [ $1 == "build" ]; then
     mkdir -p rootfs/{dev,lib}
-    cp -fr ~/busybox-1.31.1/_install/* rootfs/
+    cp -fr busybox-1.31.1/_install/* rootfs/
     cp -fr /usr/arm-linux-gnueabi/lib/* rootfs/lib/
     cp -fr etc  rootfs/
     cp -fr iptables/sbin/* rootfs/sbin/
